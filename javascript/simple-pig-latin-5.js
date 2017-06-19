@@ -2,14 +2,15 @@
 
 function pigIt(str){
   var array = str.split(" ");
-  for (var i = 0; i < array.length; i++) {
-     var letterArray = array[i].split("");
-     for (var i = 0; i < letterArray.length; i++) {
-     var firstLetter = letterArray.shift();
-    var updatedArray = array[i] + firstLetter + "ay";
-    console.log(firstLetter);
-    var adaptedArray = updatedArray.join("");
-    }
-  };
-  return adaptedArray;
+  var removeLetter;
+  var firstLetter;
+  var newArray = [];
+  var pig;
+  for (var i = 0; i < array.length; i += 1) {
+      firstLetter = array[i].charAt(0);
+      removeLetter = array[i].substring(1);
+      pig = removeLetter + firstLetter + "ay"
+      newArray.push(pig)
+     };
+  return newArray.join(" ");
 }
